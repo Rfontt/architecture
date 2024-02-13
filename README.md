@@ -1,6 +1,6 @@
 # Ports and Adapters
 
-It is to separate business logic from technical logic
+Separação de lógica de negócio e tecnologias que serão usadas.
 
 # Important things about architecture 
 
