@@ -35,7 +35,7 @@ type ProductWriter interface {
 }
 
 type ProductPersistenceInterface interface {
-	ProductReader,
+	ProductReader
 	ProductWriter
 }
 

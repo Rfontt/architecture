@@ -47,3 +47,12 @@ Lado direito do hexagono = coisas relacionadas ao servidor, exemplo: conexões c
 - D = Dependency Inversion Principle
     - Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações
     - Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações
+
+
+## GO
+
+Create mocks with mockgen:
+
+```
+mockgen -destination=application/mocks/application.go -source=application/product.go application
+```
