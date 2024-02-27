@@ -3,6 +3,7 @@ package application
 import (
 	"errors"
 	"github.com/asaskevich/govalidator"
+	uuid "github.com/satori/go.uuid"
 )
 
 func init() {
