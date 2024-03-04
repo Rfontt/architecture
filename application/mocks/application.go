@@ -278,7 +278,7 @@ func (m *MockProductWriter) EXPECT() *MockProductWriterMockRecorder {
 }
 
 // Save mocks base method.
-func (m *MockProductWriter) Save(product application.Product) (application.ProductInterface, error) {
+func (m *MockProductWriter) Save(product *application.Product) (application.ProductInterface, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Save", product)
 	ret0, _ := ret[0].(application.ProductInterface)
@@ -331,7 +331,7 @@ func (mr *MockProductPersistenceInterfaceMockRecorder) Get(id interface{}) *gomo
 }
 
 // Save mocks base method.
-func (m *MockProductPersistenceInterface) Save(product application.Product) (application.ProductInterface, error) {
+func (m *MockProductPersistenceInterface) Save(product *application.Product) (application.ProductInterface, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Save", product)
 	ret0, _ := ret[0].(application.ProductInterface)
