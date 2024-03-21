@@ -50,3 +50,19 @@ func (s *ProductService) Enable(product *Product) (ProductInterface, error) {
 
 	return result, nil
 }
+
+func (s *ProductService) Disable(product *Product) (ProductInterface, error) {
+	err := product.Disable()
+
+	if err != nil {
+		return &Product{}, err
+	}
+
+	result, err := s.Persistence.Save(product)
+
+	if err != nil {
+		return &Product{}, err
+	}
+
+	return result, nil
+}

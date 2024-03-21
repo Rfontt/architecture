@@ -56,3 +56,20 @@ func TestProductService_Enable(t *testing.T) {
 	require.Nil(t, err)
 	require.Equal(t, product, result)
 }
+
+func TestProductService_Disable(t *testing.T) {
+	ctrl := gomock.NewController(t)
+	defer ctrl.Finish()
+
+	product := application.NewProduct()
+	product.Name = "Product 1"
+	product.Price = 0
+
+	persistence := mock_application.NewMockProductPersistenceInterface(ctrl)
+	persistence.EXPECT().Save(gomock.Any()).Return(product, nil).AnyTimes()
+	service := application.ProductService{Persistence: persistence}
+
+	result, err := service.Disable(product)
+	require.Nil(t, err)
+	require.Equal(t, product, result)
+}
