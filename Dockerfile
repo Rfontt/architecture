@@ -1,6 +1,7 @@
-FROM golang:1.16
+FROM golang:1.22
 
 WORKDIR /go/src
+ADD . .
 ENV PATH="/go/bin:${PATH}"
 
 RUN go get -u github.com/spf13/cobra@latest && \
