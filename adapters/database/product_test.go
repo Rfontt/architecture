@@ -52,3 +52,17 @@ func TestProductDb_Get(t *testing.T) {
 	require.Equal(t, 0.0, product.GetPrice())
 	require.Equal(t, "disabled", product.GetStatus())
 }
+
+func TestProductDb_Save(t *testing.T) {
+	setUp()
+
+	defer Db.Close()
+
+	productDb := database.NewProductDb(Db)
+	product, err := productDb.Get("abc")
+	
+	require.Nil(t, err)
+	require.Equal(t, "Product Test", product.GetName())
+	require.Equal(t, 0.0, product.GetPrice())
+	require.Equal(t, "disabled", product.GetStatus())
+}
