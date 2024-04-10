@@ -1,4 +1,4 @@
-package db
+package database
 
 import (
 	"database/sql"
@@ -21,15 +21,15 @@ func (p *ProductDb) Get(id string) (application.ProductInterface, error) {
 
 	stmt, err := p.db.Prepare("select id, name, price, status from products where id=?")
 
-	if err != nill {
+	if err != nil {
 		return nil, err
 	}
 
 	err = stmt.QueryRow(id).Scan(&product.ID,&product.Name, &product.Price, &product.Status)
 
-	if err != nill {
+	if err != nil {
 		return nil, err
 	}
 
-	retun &product, nil
+	return &product, nil
 }
